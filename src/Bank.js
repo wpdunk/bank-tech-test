@@ -8,25 +8,23 @@ class Bank {
     return Intl.DateTimeFormat().format(new Date());
   }
 
+  getBalance(amount) {
+    return this.balance + amount;
+  }
+
   deposit(amount) {
-    var newBalance = this.balance + amount;
     this.balanceHistory.push({
       credit: amount,
       date: this.getDate(),
-      balance: newBalance
+      balance: this.getBalance(amount)
     });
   }
 
   withdraw(amount) {
-    var newBalance = this.balance - amount;
     this.balanceHistory.push({
       debit: amount,
       date: this.getDate(),
-      balance: newBalance
+      balance: this.getBalance(-amount)
     });
   }
-
-  // balanceHistory() {
-  //   // return this.balanceHistory;
-  // }
 }
