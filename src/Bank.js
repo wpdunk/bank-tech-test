@@ -4,22 +4,24 @@ class Bank {
     this.balanceHistory = [];
   }
 
+  getDate() {
+    return Intl.DateTimeFormat().format(new Date());
+  }
+
   deposit(amount) {
-    var dateString = Intl.DateTimeFormat().format(new Date());
     var newBalance = this.balance + amount;
     this.balanceHistory.push({
       credit: amount,
-      date: dateString,
+      date: this.getDate(),
       balance: newBalance
     });
   }
 
   withdraw(amount) {
-    var dateString = Intl.DateTimeFormat().format(new Date());
     var newBalance = this.balance - amount;
     this.balanceHistory.push({
       debit: amount,
-      date: dateString,
+      date: this.getDate(),
       balance: newBalance
     });
   }
