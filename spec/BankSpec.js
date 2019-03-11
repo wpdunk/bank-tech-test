@@ -25,5 +25,8 @@ describe("Bank", function() {
     it("amount to withdraw can be specified", function() {
       expect(testBank.balanceHistory.slice(-1)[0].debit).toEqual(500);
     });
+    it("records date of deposit", function() {
+      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual("11/03/2019");
+    });
   });
 });
