@@ -15,4 +15,15 @@ describe("Bank", function() {
       expect(testBank.balanceHistory.slice(-1)[0].balance).toEqual(1000);
     });
   });
+
+  describe("withdrawals", function() {
+    beforeEach(function() {
+      testBank = new Bank();
+      testBank.withdraw(500);
+    });
+
+    it("amount to withdraw can be specified", function() {
+      expect(testBank.balanceHistory.slice(-1)[0].debit).toEqual(500);
+    });
+  });
 });

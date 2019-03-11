@@ -14,6 +14,12 @@ class Bank {
     });
   }
 
+  withdraw(amount) {
+    this.balanceHistory.push({
+      debit: amount
+    });
+  }
+
   // balanceHistory() {
   //   // return this.balanceHistory;
   // }
