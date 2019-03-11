@@ -16,9 +16,11 @@ class Bank {
 
   withdraw(amount) {
     var dateString = Intl.DateTimeFormat().format(new Date());
+    var newBalance = this.balance - amount;
     this.balanceHistory.push({
       debit: amount,
-      date: dateString
+      date: dateString,
+      balance: newBalance
     });
   }
 
