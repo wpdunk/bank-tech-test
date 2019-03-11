@@ -3,7 +3,8 @@ class Bank {
     this.balanceHistory = [];
   }
   deposit(amount) {
-    this.balanceHistory.push({ credit: amount });
+    var dateString = Intl.DateTimeFormat().format(new Date());
+    this.balanceHistory.push({ credit: amount, date: dateString });
   }
   // balanceHistory() {
   //   // return this.balanceHistory;

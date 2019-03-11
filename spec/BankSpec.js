@@ -4,8 +4,11 @@ describe("Bank", function() {
       testBank = new Bank();
       testBank.deposit(1000);
       expect(testBank.balanceHistory.slice(-1)[0].credit).toEqual(1000);
-      // spyOn(testBank, "deposit").andReturn(1000);
-      // expect(testBank.deposit).toHaveBeenCalledWith(1000);
+    });
+    it("records date of deposit", function() {
+      testBank = new Bank();
+      testBank.deposit(1000);
+      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual("11/03/2019");
     });
   });
 });
