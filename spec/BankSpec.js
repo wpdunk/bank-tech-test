@@ -10,5 +10,10 @@ describe("Bank", function() {
       testBank.deposit(1000);
       expect(testBank.balanceHistory.slice(-1)[0].date).toEqual("11/03/2019");
     });
+    it("updates account balance", function() {
+      testBank = new Bank();
+      testBank.deposit(1000);
+      expect(testBank.balanceHistory.slice(-1)[0].balance).toEqual(1000);
+    });
   });
 });
