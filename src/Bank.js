@@ -13,6 +13,7 @@ class Bank {
       balance: newBalance
     });
   }
+
   // balanceHistory() {
   //   // return this.balanceHistory;
   // }
