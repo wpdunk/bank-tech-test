@@ -9,7 +9,8 @@ describe("Bank", function() {
       expect(testBank.balanceHistory.slice(-1)[0].credit).toEqual(1000);
     });
     it("records date of deposit", function() {
-      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual("11/03/2019");
+      let date = Intl.DateTimeFormat().format(new Date());
+      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual(date);
     });
     it("updates account balance", function() {
       expect(testBank.balanceHistory.slice(-1)[0].balance).toEqual(1000);
@@ -26,7 +27,8 @@ describe("Bank", function() {
       expect(testBank.balanceHistory.slice(-1)[0].debit).toEqual(500);
     });
     it("records date of withdrawal", function() {
-      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual("11/03/2019");
+      let date = Intl.DateTimeFormat().format(new Date());
+      expect(testBank.balanceHistory.slice(-1)[0].date).toEqual(date);
     });
     it("updates account balance", function() {
       expect(testBank.balanceHistory.slice(-1)[0].balance).toEqual(-500);

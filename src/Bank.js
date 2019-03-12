@@ -18,6 +18,7 @@ class Bank {
       date: this.getDate(),
       balance: this.getBalance(amount)
     });
+    console.log(this.balanceHistory);
   }
 
   withdraw(amount) {
