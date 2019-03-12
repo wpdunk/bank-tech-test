@@ -28,4 +28,9 @@ class Bank {
       balance: this.getBalance(-amount)
     });
   }
+
+  // printStatement() {
+  //   header = Printer.statementHeader()
+  //   lines =
+  // }
 }

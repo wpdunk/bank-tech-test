@@ -14,4 +14,21 @@ describe("Printer", function() {
       "12/03/2019 || 1000 ||  || 1000"
     );
   });
+  it("prints statement body", function() {
+    let entriesArray = [
+      {
+        credit: 1000,
+        date: "12/03/2019",
+        balance: 1000
+      },
+      {
+        credit: 1000,
+        date: "12/03/2019",
+        balance: 1000
+      }
+    ];
+    expect(Printer.statementBody(entriesArray)).toContain(
+      "12/03/2019 || 1000 ||  || 1000\n12/03/2019 || 1000 ||  || 1000\n"
+    );
+  });
 });
