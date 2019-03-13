@@ -37,11 +37,14 @@ describe("Bank", function() {
 
   describe("statement", function() {
     it("can print statement history", function() {
+      spyOn(Printer, "statementHeader").and.returnValue(
+        "date || credit || debit || balance\n"
+      );
+      spyOn(Printer, "statementBody").and.returnValue(
+        `30/03/2019 ||  || 500 || 1500\n30/03/2019 || 2000 ||  || 2000\n`
+      );
       spyOn(console, "log");
       testBank = new Bank();
-      spyOn(testBank, "getDate").and.returnValue("30/03/2019");
-      testBank.deposit(2000);
-      testBank.withdraw(500);
       testBank.printStatement();
       expect(console.log)
         .toHaveBeenCalledWith(`date || credit || debit || balance
