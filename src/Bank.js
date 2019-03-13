@@ -9,7 +9,8 @@ class Bank {
   }
 
   getBalance(amount) {
-    return this.balance + amount;
+    this.balance += amount;
+    return this.balance;
   }
 
   deposit(amount) {
@@ -18,7 +19,6 @@ class Bank {
       date: this.getDate(),
       balance: this.getBalance(amount)
     });
-    console.log(this.balanceHistory);
   }
 
   withdraw(amount) {
@@ -29,8 +29,9 @@ class Bank {
     });
   }
 
-  // printStatement() {
-  //   header = Printer.statementHeader()
-  //   lines =
-  // }
+  printStatement() {
+    var header = Printer.statementHeader();
+    var body = Printer.statementBody(this.balanceHistory.reverse());
+    console.log(header + body);
+  }
 }

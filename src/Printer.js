@@ -1,6 +1,6 @@
 class Printer {
   static statementHeader() {
-    return "date || credit || debit || balancen";
+    return "date || credit || debit || balance\n";
   }
   static statementLine(entry) {
     return `${entry.date || ""} || ${entry.credit || ""} || ${entry.debit ||
