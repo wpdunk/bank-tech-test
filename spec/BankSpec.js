@@ -39,15 +39,14 @@ describe("Bank", function() {
     it("can print statement history", function() {
       spyOn(console, "log");
       testBank = new Bank();
-      testBank.deposit(1000);
+      spyOn(testBank, "getDate").and.returnValue("30/03/2019");
       testBank.deposit(2000);
       testBank.withdraw(500);
       testBank.printStatement();
       expect(console.log)
         .toHaveBeenCalledWith(`date || credit || debit || balance
-13/03/2019 ||  || 500 || 2500
-13/03/2019 || 2000 ||  || 3000
-13/03/2019 || 1000 ||  || 1000
+30/03/2019 ||  || 500 || 1500
+30/03/2019 || 2000 ||  || 2000
 `);
     });
   });

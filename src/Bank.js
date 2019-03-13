@@ -5,6 +5,7 @@ class Bank {
   }
 
   getDate() {
+    console.log(Intl.DateTimeFormat().format(new Date()));
     return Intl.DateTimeFormat().format(new Date());
   }
 
