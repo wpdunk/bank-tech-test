@@ -5,7 +5,7 @@ class Bank {
   }
 
   getDate() {
-    return Intl.DateTimeFormat().format(new Date());
+    return Intl.DateTimeFormat().format(Date.now());
   }
 
   getBalance(amount) {
