@@ -2,22 +2,19 @@ class Transaction {
   getDate() {
     return Intl.DateTimeFormat().format(Date.now());
   }
-  getBalance(amount, oldBalance) {
-    return amount + oldBalance;
-  }
 
-  logTransaction(amount, oldBalance) {
+  logTransaction(amount, balance) {
     if (amount < 0) {
       return {
         date: this.getDate(),
         debit: -amount,
-        balance: this.getBalance(amount, oldBalance)
+        balance: balance
       };
     } else {
       return {
         date: this.getDate(),
         credit: amount,
-        balance: this.getBalance(amount, oldBalance)
+        balance: balance
       };
     }
   }
