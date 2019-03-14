@@ -1,5 +1,6 @@
 class Bank {
-  constructor() {
+  constructor(printer) {
+    this.printer = printer;
     this.balance = 0;
     this.balanceHistory = [];
   }
@@ -21,8 +22,8 @@ class Bank {
   }
 
   printStatement() {
-    var header = Printer.statementHeader();
-    var body = Printer.statementBody(this.balanceHistory.reverse());
+    var header = this.printer.statementHeader();
+    var body = this.printer.statementBody(this.balanceHistory.reverse());
     console.log(header + body);
   }
 }
