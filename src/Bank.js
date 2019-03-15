@@ -1,6 +1,7 @@
 class Bank {
-  constructor(printer) {
+  constructor(printer, transaction) {
     this.printer = printer;
+    this.transaction = new transaction();
     this.balance = 0;
     this.balanceHistory = [];
   }
@@ -11,14 +12,17 @@ class Bank {
 
   deposit(amount) {
     var newBalance = this.getBalance(amount);
-    var transaction = new Transaction();
-    this.balanceHistory.push(transaction.logTransaction(amount, newBalance));
+    // var newTransaction = new this.transaction;
+    this.balanceHistory.push(
+      this.transaction.logTransaction(amount, newBalance)
+    );
   }
 
   withdraw(amount) {
     var newBalance = this.getBalance(-amount);
-    var transaction = new Transaction();
-    this.balanceHistory.push(transaction.logTransaction(-amount, newBalance));
+    this.balanceHistory.push(
+      this.transaction.logTransaction(-amount, newBalance)
+    );
   }
 
   printStatement() {

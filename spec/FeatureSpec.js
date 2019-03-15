@@ -1,8 +1,8 @@
-describe("Bank", function() {
+describe("Bank Feature", function() {
   it("Can deposit, withdraw and print statement", function() {
     spyOn(console, "log");
     spyOn(Date, "now").and.returnValue(1552435200000);
-    testBank = new Bank(Printer);
+    testBank = new Bank(Printer, Transaction);
     testBank.deposit(1000);
     testBank.deposit(2000);
     testBank.withdraw(500);
